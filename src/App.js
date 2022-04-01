@@ -4,7 +4,10 @@ import { useState, useEffect, Fragment } from "react";
 import Login from "./Components/Login/Login"
 import Home from "./Components/Home/Home"
 import Header from "./Components/Header/Header"
-import UserData from "./Components/RefFile/UserData"
+// import UserData from "./Components/RefFile/UserData"
+import { Routes, Route } from "react-router-dom";
+import Users from './Components/User/Users';
+import Profile from "./Components/User/Profile"
 
 function App() {
 
@@ -36,7 +39,11 @@ function App() {
                 {!isLoggedIn ? <Login onLoginClick={LoginHandler} /> : <Home onLogoutClick={logoutHandler} />}
                 {/* {isLoggedIn ? <Home /> : ""} */}
             </main>
-            <UserData />
+            <Routes>
+                <Route path='/users' element={<Users />} />
+                <Route path='/profile' element={<Profile />}/>
+            </Routes>
+            {/* <UserData /> */}
         </Fragment>
     );
 }

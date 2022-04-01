@@ -1,8 +1,8 @@
 import Navigation from "../Navigation/Navigation"
-import "./Header.css"
+import styles from "./Header.module.css"
 const Header = (props) => {
     return (
-        <header className="header">
+        <header className={styles.header}>
             <h1>Storage App</h1>
             <Navigation userLogState={props.userLoggedIn} userLogout={props.onLogoutClick}/>
         </header>
